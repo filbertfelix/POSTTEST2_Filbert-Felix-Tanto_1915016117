@@ -69,11 +69,11 @@ class MainPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SizeContainer(size: "11:30"),
-                  SizeContainer(size: "14:00"),
-                  SizeContainer(size: "16:30"),
-                  SizeContainer(isActive: true, size: "19:00"),
-                  SizeContainer(size: "20:30"),
+                  JamContainer(jam: "11:30"),
+                  JamContainer(jam: "14:00"),
+                  JamContainer(jam: "16:30"),
+                  JamContainer(isActive: true, jam: "19:00"),
+                  JamContainer(jam: "20:30"),
                 ],
               ),
               Container(
@@ -104,11 +104,11 @@ class MainPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SizeContainer(size: "11:00"),
-                  SizeContainer(size: "13:30"),
-                  SizeContainer(size: "16:00"),
-                  SizeContainer(size: "18:30"),
-                  SizeContainer(size: "21:00"),
+                  JamContainer(jam: "11:00"),
+                  JamContainer(jam: "13:30"),
+                  JamContainer(jam: "16:00"),
+                  JamContainer(jam: "18:30"),
+                  JamContainer(jam: "21:00"),
                 ],
               ),
               Container(
@@ -139,11 +139,11 @@ class MainPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SizeContainer(size: "12:00"),
-                  SizeContainer(size: "14:30"),
-                  SizeContainer(size: "17:00"),
-                  SizeContainer(size: "19:30"),
-                  SizeContainer(size: "22:00"),
+                  JamContainer(jam: "12:00"),
+                  JamContainer(jam: "14:30"),
+                  JamContainer(jam: "17:00"),
+                  JamContainer(jam: "19:30"),
+                  JamContainer(jam: "22:00"),
                 ],
               ),
               Button()
@@ -155,12 +155,12 @@ class MainPage extends StatelessWidget {
   }
 }
 
-class SizeContainer extends StatelessWidget {
-  const SizeContainer({Key? key, this.isActive = false, required this.size})
+class JamContainer extends StatelessWidget {
+  const JamContainer({Key? key, this.isActive = false, required this.jam})
       : super(key: key);
 
   final bool isActive;
-  final String size;
+  final String jam;
 
   @override
   Widget build(BuildContext context) {
@@ -177,7 +177,7 @@ class SizeContainer extends StatelessWidget {
         ),
       ),
       child: Text(
-        size,
+        jam,
         style: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
